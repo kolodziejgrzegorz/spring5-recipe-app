@@ -7,14 +7,17 @@ import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.CategoryRepository;
 import guru.springframework.repositories.RecipeRepository;
 import guru.springframework.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Component
 public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -29,8 +32,9 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        loadData();
+        recipeRepository.saveAll(loadData());
     }
 
     private List<Recipe> loadData(){
@@ -132,7 +136,6 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         recipe.setUrl("https://www.simplyrecipes.com/recipes/perfect_guacamole/");
 
         recipes.add(recipe);
-        recipeRepository.save(recipe);
         return recipes;
     }
 

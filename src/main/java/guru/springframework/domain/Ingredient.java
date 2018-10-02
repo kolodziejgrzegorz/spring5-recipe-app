@@ -1,8 +1,13 @@
 package guru.springframework.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
 
@@ -12,6 +17,7 @@ public class Ingredient {
 
     private String desctiption;
     private BigDecimal amount;
+
     @ManyToOne
     private Recipe recipe;
 
@@ -21,50 +27,16 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    public Ingredient(String desctiption, BigDecimal amount, UnitOfMeasure unitOfMeasure) {
+        this.desctiption = desctiption;
+        this.amount = amount;
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
     public Ingredient(String desctiption, BigDecimal amount, Recipe recipe, UnitOfMeasure unitOfMeasure) {
         this.desctiption = desctiption;
         this.amount = amount;
         this.recipe = recipe;
         this.unitOfMeasure = unitOfMeasure;
-    }
-
-    public UnitOfMeasure getUnitOfMeasure() {
-        return unitOfMeasure;
-    }
-
-    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
-        this.unitOfMeasure = unitOfMeasure;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDesctiption() {
-        return desctiption;
-    }
-
-    public void setDesctiption(String desctiption) {
-        this.desctiption = desctiption;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
     }
 }
