@@ -18,8 +18,8 @@ public class IndexController {
     }
 
     @RequestMapping({"","/","/index","/index.html"})
-    public String getIndexPagr(Model model){
-        model.addAttribute("recipes", recipeService.findAll());
-        return"index";
+    public String getIndexPage(Model model){
+        model.addAttribute("recipes", recipeService.getRecipes());
+        return "index";
     }
 }
