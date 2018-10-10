@@ -15,28 +15,28 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String desctiption;
+    private String description;
     private BigDecimal amount;
 
     @ManyToOne
     private Recipe recipe;
 
     @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure unitOfMeasure;
+    private UnitOfMeasure uom;
 
     public Ingredient() {
     }
 
-    public Ingredient(String desctiption, BigDecimal amount, UnitOfMeasure unitOfMeasure) {
-        this.desctiption = desctiption;
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
+        this.description = description;
         this.amount = amount;
-        this.unitOfMeasure = unitOfMeasure;
+        this.uom = uom;
     }
 
-    public Ingredient(String desctiption, BigDecimal amount, Recipe recipe, UnitOfMeasure unitOfMeasure) {
-        this.desctiption = desctiption;
+    public Ingredient(String description, BigDecimal amount, Recipe recipe, UnitOfMeasure uom) {
+        this.description = description;
         this.amount = amount;
         this.recipe = recipe;
-        this.unitOfMeasure = unitOfMeasure;
+        this.uom = uom;
     }
 }
