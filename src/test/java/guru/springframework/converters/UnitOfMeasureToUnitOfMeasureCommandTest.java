@@ -31,7 +31,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
     }
 
     @Test
-    public void convert() {
+    public void testConvert() {
         //given
         UnitOfMeasure uom = new UnitOfMeasure();
         uom.setId(ID_VALUE);

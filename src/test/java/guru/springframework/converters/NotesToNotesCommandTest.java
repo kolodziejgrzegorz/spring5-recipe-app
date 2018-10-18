@@ -31,7 +31,7 @@ public class NotesToNotesCommandTest {
     }
 
     @Test
-    public void convert() {
+    public void testConvert() {
         //given
         UnitOfMeasure notes = new UnitOfMeasure();
         notes.setId(ID_VALUE);

@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class NotesCommandToNotesTest {
     private final static Long ID_VALUE = new Long(1L);
-    private static final String DESCRIPTION = "recipeNotes";
+    private static final String DESCRIPTION = "notes";
 
     NotesCommandToNotes notesConverter;
 
@@ -30,7 +30,7 @@ public class NotesCommandToNotesTest {
     }
 
     @Test
-    public void convert() {
+    public void testConvert() {
         //given
         NotesCommand notesCommand = new NotesCommand();
         notesCommand.setId(ID_VALUE);

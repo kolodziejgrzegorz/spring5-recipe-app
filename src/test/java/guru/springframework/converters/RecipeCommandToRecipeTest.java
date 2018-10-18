@@ -50,7 +50,7 @@ public class RecipeCommandToRecipeTest {
     }
 
     @Test
-    public void convert() {
+    public void testConvert() {
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
         recipeCommand.setDescription(DESCRIPTION);

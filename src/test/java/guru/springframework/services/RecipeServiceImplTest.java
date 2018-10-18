@@ -35,7 +35,7 @@ public class RecipeServiceImplTest {
     }
 
     @Test
-    public void getRecipesByIdTest() {
+    public void testgGetRecipesByIdTest() {
         Recipe recipe = new Recipe();
         recipe.setId(1L);
         Optional<Recipe>recipeOptional = Optional.of(recipe);
@@ -51,7 +51,7 @@ public class RecipeServiceImplTest {
     }
 
     @Test
-    public void getRecipesTest() {
+    public void testGetRecipesTest() {
         Recipe recipe = new Recipe();
         HashSet recipeData = new HashSet();
         recipeData.add(recipe);
@@ -62,6 +62,17 @@ public class RecipeServiceImplTest {
         assertEquals(recipes.size(), 1);
         verify(recipeRepository, times(1)).findAll();
         verify(recipeRepository, never()).findById(anyLong());
+
+    }
+
+    @Test
+    public void testDeleteRecipe(){
+
+        Long idToDelete = new Long(2L);
+
+        recipeService.deleteById(idToDelete);
+
+        verify(recipeRepository,times(1)).deleteById(anyLong());
 
     }
 }

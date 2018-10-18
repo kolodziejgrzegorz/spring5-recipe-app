@@ -35,7 +35,7 @@ public class IngredientToIngredientCommandTest {
     }
 
     @Test
-    public void convert() {
+    public void testConvert() {
 
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);
@@ -57,7 +57,7 @@ public class IngredientToIngredientCommandTest {
     }
 
     @Test
-    public void convertWithNullUOM() {
+    public void testCnvertWithNullUOM() {
 
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);

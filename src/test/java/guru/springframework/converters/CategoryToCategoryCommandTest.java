@@ -31,7 +31,7 @@ public class CategoryToCategoryCommandTest {
     }
 
     @Test
-    public void convert() {
+    public void testConvert() {
         //given
         Category category = new Category();
         category.setId(ID_VALUE);
