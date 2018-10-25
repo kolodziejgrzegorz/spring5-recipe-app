@@ -43,5 +43,8 @@ jobs:
       - store_test_results:
           path: target/surefire-reports
 
+      -after_success:
+         - bash <(curl -s https://codecov.io/bash)
+
 
 
