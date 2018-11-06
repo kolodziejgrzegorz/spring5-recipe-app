@@ -1,5 +1,7 @@
 # spring5-recipe-app
-> Simple Spring Boot app to display in ThyMeleaf recipes saved in databse
+[![CircleCI](https://circleci.com/gh/kolodziejgrzegorz/spring5-recipe-app.svg?style=svg)](https://circleci.com/gh/kolodziejgrzegorz/spring5-recipe-app)
+
+> Simple Spring Boot app to display in ThyMeleaf recipes saved in database
 
 ## Table of contents
 * [General info](#general-info)
@@ -46,5 +48,5 @@ Copy sql script from /resources/scripts/configure-mysql.sql and execute in MySql
 Project is: _in progress_
 
 ## Inspiration
-This app is basen on Spring Framework 5: Beginner to Guru course from udemy.com <br />
+This app is based on Spring Framework 5: Beginner to Guru course from udemy.com <br />
 https://www.udemy.com/spring-framework-5-beginner-to-guru/
